@@ -2,10 +2,9 @@
 
 Submitted by: **Xiaoyun Yin**
 
-About this web app: **A responsive academic CV and research portfolio for Xiaoyun Yin. The site presents research areas, publications, teaching and mentoring, education, awards, professional service, technical skills, a timeline, and a downloadable PDF CV.
+About this web app: **A responsive academic CV and research portfolio for Xiaoyun Yin. The site presents research areas, publications, teaching and mentoring, education, awards, professional service, technical skills, a timeline, and a downloadable PDF CV.**
 
-I apologize to make it Narcissus, but I'm eager to have a personal web so that I can post it for my job hunting.
-**
+**I apologize to make it Narcissus, but I'm eager to have a personal web so that I can post it for my job hunting.**
 
 Time spent: **About 3 hours**
 
