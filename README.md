@@ -20,7 +20,7 @@ The following **required** functionality is completed:
 - [x] **The user can click on each item in the list to see a detailed view of it**
   - [x] **Each detail view has a unique endpoint**
   - Implemented endpoints: `/research`, `/publications`, `/teaching`, `/about`, and `/cv`.
-- [ ] **The web app serves an appropriate 404 page when no matching route is defined**
+- [x] **The web app serves an appropriate 404 page when no matching route is defined**
 - [ ] **The web app is styled using Picocss**
 
 The following **optional** features are implemented:
@@ -47,9 +47,19 @@ GIF created with **Playwright screenshots and Pillow**.
 
 ## Notes
 
-This project started from a small static client/server starter and was redesigned into a personal academic CV website. The main challenge was adapting the original WEB103 checklist to a portfolio-style app: the current site has unique routed detail pages and card-based content, but it does not use PicoCSS and does not yet include a dedicated 404 page.
+This project started from a small static client/server starter and was redesigned into a personal academic CV website. The main challenge was adapting the original WEB103 checklist to a portfolio-style app: the current site has unique routed detail pages, card-based content, and a 404 page, but it does not use PicoCSS.
 
 To run locally:
+
+```bash
+cd server
+npm install
+npm start
+```
+
+Then open `http://localhost:3001/`.
+
+For Vite development:
 
 ```bash
 cd client
