@@ -1,10 +1,13 @@
-# WEB103 Project 1 - Xiaoyun Yin Academic CV
+# WEB103 Project 1 - Listicle Part 1
 
 Submitted by: **Xiaoyun Yin**
 
-About this web app: **A responsive academic CV and research portfolio for Xiaoyun Yin. The site presents research areas, publications, teaching and mentoring, education, awards, professional service, technical skills, a timeline, and a downloadable PDF CV.**
+About this web app: **A responsive academic CV and research portfolio for Xiaoyun Yin. The site presents research areas, publications, teaching and mentoring, education, awards, professional service, technical skills, a timeline, and a downloadable PDF CV.
 
-Time spent: **About 8 hours**
+I apologize to make it Narcissus, but I'm eager to have a personal web so that I can post it for my job hunting.
+**
+
+Time spent: **About 3 hours**
 
 ## Required Features
 
