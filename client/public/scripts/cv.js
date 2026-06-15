@@ -207,7 +207,7 @@ const data = {
   ],
 }
 
-const navMap = [
+const fallbackNavMap = [
   {
     title: 'Research',
     path: '/research',
@@ -235,6 +235,7 @@ const navMap = [
   },
 ]
 
+let navMap = fallbackNavMap
 const main = document.querySelector('#main-content')
 
 function escapeHtml(value) {
@@ -342,6 +343,7 @@ function renderHome() {
                   <span>${escapeHtml(page.title)}</span>
                   <small>${escapeHtml(page.path)}</small>
                   <em>${escapeHtml(page.items.join(' / '))}</em>
+                  ${page.description ? `<strong>${escapeHtml(page.description)}</strong>` : ''}
                 </a>
               `,
             )
@@ -689,4 +691,23 @@ document.addEventListener('click', (event) => {
 
 window.addEventListener('popstate', () => render())
 
-render()
+async function hydrateNavigationItems() {
+  if (!window.cvItemsApi) return
+
+  try {
+    const items = await window.cvItemsApi.fetchNavigationItems()
+
+    if (!items.length) return
+
+    navMap = items.map((item) => ({
+      title: item.title,
+      path: item.path,
+      items: Array.isArray(item.sections) ? item.sections : [],
+      description: item.description,
+    }))
+  } catch (error) {
+    console.warn('Using local navigation fallback:', error.message)
+  }
+}
+
+hydrateNavigationItems().finally(() => render())

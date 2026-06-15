@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import giftsRouter from './routes/gifts.js'
+import navigationItemsRouter from './routes/navigationItems.js'
 
 const app = express()
 const __filename = fileURLToPath(import.meta.url)
@@ -10,8 +11,10 @@ const clientRoot = path.resolve(__dirname, '../client')
 const clientPublic = path.join(clientRoot, 'public')
 const clientIndex = path.join(clientRoot, 'index.html')
 
+app.use(express.json())
 app.use(express.static(clientPublic))
 
+app.use('/api/navigation-items', navigationItemsRouter)
 app.use('/gifts', giftsRouter)
 
 app.get('/style.css', (req, res) => {
@@ -66,8 +69,17 @@ app.use((req, res) => {
   `)
 })
 
-const PORT = process.env.PORT || 3001
+const PORT = Number(process.env.PORT) || 3001
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`)
+})
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Stop the existing server or run with a different PORT.`)
+    process.exit(1)
+  }
+
+  throw error
 })

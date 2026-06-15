@@ -388,6 +388,13 @@ button {
   font-style: normal;
 }
 
+.map-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 620;
+}
+
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
